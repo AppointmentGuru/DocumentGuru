@@ -13,7 +13,8 @@
   <document-list-item
     v-for='document in documents'
     :key='document.id'
-    :document='document' >
+    :document='document' 
+    :repeat='document' >
   </document-list-item>
 </div>
 </template>

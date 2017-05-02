@@ -1,23 +1,23 @@
 <template>
   <div class="main-page">
     <h2>AppointmentGuru DocumentGuru</h2>
-    <strong>Todo</strong>
+    <!--<strong>Todo</strong>
     <ul>
       <li>Provide basic styling so that the App/docs looks nice</li>
-    </ul>
+    </ul>-->
 
-    <h3>Image Uploader</h3>
-    <p>A component for uploading images</p>
-    <strong>Todo</strong>
+    <h3>Upload an Image</h3>
+     <div>
+    <image-uploader ></image-uploader>
+    </div>
+    <!--<strong>Todo</strong>
     <ul>
       <li>Validate that images are the correct type, and (optionally) dimensions</li>
       <li>Upload images to the Actual API</li>
       <li>Show a loading icon while uploading</li>
     </ul>
-    <strong>Example</strong>
-    <p>
-    <image-uploader ></image-uploader>
-    </p>
+    <strong>Example</strong>-->
+
     <hr/>
 
     <h3>Document list </h3>

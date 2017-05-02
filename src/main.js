@@ -12,11 +12,13 @@ Vue.config.productionTip = false
 
 import {
   Upload,
-  Button
+  Button,
+  Input
 } from 'element-ui'
 
 Vue.component(Upload.name, Upload)
 Vue.use(Button)
+Vue.use(Input)
 
 /* eslint-disable no-new */
 new Vue({

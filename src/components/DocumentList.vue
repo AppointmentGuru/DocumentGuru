@@ -1,5 +1,13 @@
 <template>
 <div>
+  <div>
+  <el-input
+  placeholder="Search by id ex 1"
+  icon="search"
+  v-model="input2"
+  :on-icon-click="handleIconClick">
+</el-input>
+  </div>
   <strong>Todo</strong>
   <ul>
     <li>Ability to filter document list</li>
@@ -25,6 +33,16 @@ export default {
   components: { DocumentListItem },
   props: {
     documents: { type: Array, required: true }
+  },
+  data () {
+    return {
+      input2: ''
+    }
+  },
+  methods: {
+    handleIconClick (ev) {
+      console.log(ev)
+    }
   }
 }
 </script>

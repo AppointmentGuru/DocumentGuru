@@ -21,13 +21,9 @@
     <hr/>
 
     <h3>Document list </h3>
-    <p>Display a list of document items</p>
-    <strong>Example</strong>
-    <p>
     <document-list :documents='documents' ></document-list>
     </p>
     <hr/>
-
 
     <hr/>
   </div>
@@ -41,25 +37,6 @@ export default {
   name: 'homepage',
   components: {
     ImageUploader, DocumentList
-  },
-  data () {
-    return {
-      // todo: extra this into external files
-      documents: [
-        {
-          id: 1,
-          name: 'A name describing this file',
-          type: 'application/pdf',
-          url: 'http://someplace.com/foo'
-        },
-        {
-          id: 2,
-          name: 'A different name describing this file',
-          type: 'application/pdf',
-          url: 'http://someplace.com/foo'
-        }
-      ]
-    }
   }
 }
 </script>

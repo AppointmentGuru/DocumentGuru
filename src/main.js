@@ -13,12 +13,20 @@ Vue.config.productionTip = false
 import {
   Upload,
   Button,
-  Input
+  Input,
+  Popover,
+  Table,
+  TableColumn,
+  Cascader
 } from 'element-ui'
 
 Vue.component(Upload.name, Upload)
 Vue.use(Button)
 Vue.use(Input)
+Vue.use(Popover)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Cascader)
 
 /* eslint-disable no-new */
 new Vue({

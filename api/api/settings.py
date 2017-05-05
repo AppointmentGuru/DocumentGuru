@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'documentguru',
     'api',
+    'docservice',
 ]
 
 MIDDLEWARE = [

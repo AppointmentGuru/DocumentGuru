@@ -29,10 +29,11 @@
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
   :on-remove="handleRemove"
+  :before-upload="beforeAvatarUpload"
   :file-list="fileList2"
   list-type="picture">
   <el-button size="small" type="primary">Click to upload</el-button>
-  <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
+  <div slot="tip" class="el-upload__tip">jpg file with a size less than 500kb</div>
 </el-upload>
 </template>
 <script>
@@ -50,6 +51,18 @@
       },
       handlePreview (file) {
         console.log(file)
+      },
+      beforeAvatarUpload (file) {
+        const isJPG = file.type === 'image/jpeg'
+        const isLt2M = file.size / 1024 / 1024 < 2
+
+        if (!isJPG) {
+          alert('Avatar picture must be JPG format!')
+        }
+        if (!isLt2M) {
+          alert('Avatar picture size can not exceed 2MB!')
+        }
+        return isJPG && isLt2M
       }
     }
   }

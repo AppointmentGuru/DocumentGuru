@@ -24,8 +24,6 @@
     <document-list :documents='documents' ></document-list>
     </p>
     <hr/>
-
-    <hr/>
   </div>
 </template>
 
@@ -35,8 +33,10 @@ import DocumentList from '@/components/DocumentList'
 
 export default {
   name: 'homepage',
+  props: ['documents'],
   components: {
-    ImageUploader, DocumentList
+    ImageUploader,
+    DocumentList
   }
 }
 </script>

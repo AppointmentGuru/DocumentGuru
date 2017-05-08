@@ -17,7 +17,7 @@
       <el-popover ref="popover4" placement="right" width="510" trigger="click">
       <el-table :data="gridData">
         <el-table-column width="50" property="id" label="id"></el-table-column>
-        <el-table-column width="150" property="name" label="name"></el-table-column>
+        <el-table-column width="145"property="name" label="name"></el-table-column>
         <el-table-column width="150" property="type" label="type"></el-table-column>
         <el-table-column width="150" property="url" label="URL" ></el-table-column>
       </el-table>
@@ -67,6 +67,7 @@
     }
   }
 </script>
+
 <style>
 .documents {
   background-color:orangered;

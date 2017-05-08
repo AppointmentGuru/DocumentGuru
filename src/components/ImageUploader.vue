@@ -1,15 +1,15 @@
 <style>
-  .avatar-uploader .el-upload {
+  .upload-demo .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .avatar-uploader .el-upload:hover {
+  .upload-demo .el-upload:hover {
     border-color: #20a0ff;
   }
-  .avatar-uploader-icon {
+  .upload-demo-icon {
     font-size: 28px;
     color: #8c939d;
     width: 178px;
@@ -35,6 +35,7 @@
   <el-button size="small" type="primary">Click to upload</el-button>
   <div slot="tip" class="el-upload__tip">jpg file with a size less than 500kb</div>
 </el-upload>
+
 </template>
 <script>
   export default {
@@ -54,13 +55,13 @@
       },
       beforeAvatarUpload (file) {
         const isJPG = file.type === 'image/jpeg'
-        const isLt2M = file.size / 1024 / 1024 < 2
+        const isLt2M = file.size / 500 / 500 < 2
 
         if (!isJPG) {
-          alert('Avatar picture must be JPG format!')
+          alert('Picture must be JPG format!')
         }
         if (!isLt2M) {
-          alert('Avatar picture size can not exceed 2MB!')
+          alert('Picture size can not exceed 2MB!')
         }
         return isJPG && isLt2M
       }

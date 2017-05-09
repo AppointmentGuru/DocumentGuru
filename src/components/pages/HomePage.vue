@@ -21,7 +21,7 @@
     <hr/>
 
     <h3>Document list </h3>
-    <document-list :documents='documents' ></document-list>
+    <document-list></document-list>
     </p>
     <hr/>
   </div>

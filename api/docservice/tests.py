@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
+from .models import Document
 from PIL import Image
 
 import tempfile
@@ -34,7 +35,8 @@ class APICreateViewTestCase(TestCase):
         assert self.result.status_code == 201
 
     def test_assert_file_is_uploaded(self):
-        import pdb;pdb.set_trace()
+        assert Document.objects.count() == 1, \
+            'Expected a new document to have been created. There are: {} document/s'.format(Document.objects.count())
 
 class APIDetailTestCase(TestCase):
 

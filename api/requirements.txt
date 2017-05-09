@@ -4,6 +4,7 @@ gunicorn==19.6.0
 requests==2.11.1
 raven
 newrelic
+pillow 
 
 django-cors-middleware
 django-filter

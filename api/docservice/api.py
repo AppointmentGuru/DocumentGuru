@@ -6,7 +6,7 @@ from rest_framework import routers, serializers, viewsets
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Document
-        fields = '__all__
+        fields = '__all__'
 
 # ViewSets define the view behavior.
 class DocumentViewSet(viewsets.ModelViewSet):
@@ -15,4 +15,4 @@ class DocumentViewSet(viewsets.ModelViewSet):
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'documents', UserViewSet)
+router.register(r'documents', DocumentViewSet)

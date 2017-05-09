@@ -6,9 +6,6 @@ DocumentViewSet(viewsets.ModelViewSet):
   ...
   def create(self, request, *args, **kwargs):
         # create the model here
-        class Document(models.Model):
-            name = models.CharField(max_length=50)
-            image = models.ImageField()
 
 
         document = Document.objects.create(self.validated_data)

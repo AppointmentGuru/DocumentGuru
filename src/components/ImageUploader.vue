@@ -24,18 +24,34 @@
   }
 </style>
 <template>
+<div>
+  <h4>Choose a file type!</h4>
+  <el-dropdown>
+  <el-button type="primary">
+    Dropdown List<i class="el-icon-caret-bottom el-icon--right"></i>
+  </el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>ID Photo</el-dropdown-item>
+    <el-dropdown-item>Drivers Licence</el-dropdown-item>
+    <el-dropdown-item>Sick Note</el-dropdown-item>
+    <el-dropdown-item>Avetar Photo</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+
 <el-upload
   class="upload-demo"
+  drag
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-preview="handlePreview"
   :on-remove="handleRemove"
   :before-upload="beforeAvatarUpload"
   :file-list="fileList2"
   list-type="picture">
-  <el-button size="small" type="primary">Click to upload</el-button>
+   <i class="el-icon-upload"></i>
+  <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
   <div slot="tip" class="el-upload__tip">jpg file with a size less than 500kb</div>
 </el-upload>
-
+</div>
 </template>
 <script>
   export default {

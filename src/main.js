@@ -20,7 +20,10 @@ import {
   Cascader,
   Card,
   Col,
-  Form
+  Form,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 } from 'element-ui'
 
 Vue.component(Upload.name, Upload)
@@ -33,6 +36,9 @@ Vue.use(Cascader)
 Vue.use(Card)
 Vue.use(Col)
 Vue.use(Form)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 /* eslint-disable no-new */
 new Vue({

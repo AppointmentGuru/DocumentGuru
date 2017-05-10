@@ -1,5 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
+from PIL import Image
+
+import tempfile
 
 class APIListViewTestCase(TestCase):
 
@@ -15,7 +18,23 @@ class APIListViewTestCase(TestCase):
 
 
 class APICreateViewTestCase(TestCase):
-    pass
+
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('document-list')
+
+        image = Image.new('RGB', (100, 100))
+        self.file = tempfile.NamedTemporaryFile(suffix='.jpg')
+        image.save(self.file, 'jpeg')
+
+        with open(self.file.name, 'rb') as data:
+            self.result = self.client.post(self.url, {"image": data, "name": 'test-document'}, format='multipart')
+
+    def test_create_document_is_ok(self):
+        assert self.result.status_code == 201
+
+    def test_assert_file_is_uploaded(self):
+        import pdb;pdb.set_trace()
 
 class APIDetailTestCase(TestCase):
 

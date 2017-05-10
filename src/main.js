@@ -11,10 +11,34 @@ Vue.config.productionTip = false
 // Element components:
 
 import {
-  Upload
+  Upload,
+  Button,
+  Input,
+  Popover,
+  Table,
+  TableColumn,
+  Cascader,
+  Card,
+  Col,
+  Form,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 } from 'element-ui'
 
 Vue.component(Upload.name, Upload)
+Vue.use(Button)
+Vue.use(Input)
+Vue.use(Popover)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Cascader)
+Vue.use(Card)
+Vue.use(Col)
+Vue.use(Form)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 /* eslint-disable no-new */
 new Vue({

@@ -16,4 +16,4 @@ class ImageType(models.Model):
     description = models.CharField(max_length=200)
     width = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
-    imagedoc = models.ForeignKey('ImageDocument', on_delete=CASCADE)
+    imagedoc = models.ForeignKey('ImageDocument', on_delete=SET_NULL)

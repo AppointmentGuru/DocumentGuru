@@ -17,3 +17,9 @@ class ImageType(models.Model):
     width = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
     imagedoc = models.ForeignKey('ImageDocument', on_delete=SET_NULL)
+
+class Note(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+    createdDate = models.DateTimeField()
+    modifiedDate = models.DateTimeField()

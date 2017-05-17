@@ -9,14 +9,14 @@ class Document(models.Model):
 
 class ImageDocument(models.Model):
     name = models.CharField(max_length=50)
-    image = FileField()
+    upload = models.FileField(upload_to='uploads/')
 
 class ImageType(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     width = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
-    imagedoc = models.ForeignKey('ImageDocument', on_delete=SET_NULL)
+    imageDoc = models.ForeignKey('ImageDocument', on_delete=models.SET_NULL, null=True, blank=True)
 
 class Note(models.Model):
     title = models.CharField(max_length=50)

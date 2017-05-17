@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=200)),
                 ('width', models.PositiveIntegerField()),
                 ('height', models.PositiveIntegerField()),
-                ('imagedoc', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='docservice.ImageDocument', to_field='SET_NULL')),
+                ('imagedoc', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='docservice.ImageDocument')),
             ],
         ),
         migrations.CreateModel(

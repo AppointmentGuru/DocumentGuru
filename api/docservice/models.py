@@ -16,7 +16,7 @@ class ImageType(models.Model):
     description = models.CharField(max_length=200)
     width = models.PositiveIntegerField()
     height = models.PositiveIntegerField()
-    imageDoc = models.ForeignKey('ImageDocument', on_delete=models.SET_NULL, null=True, blank=True)
+    imageDoc = models.ForeignKey('ImageDocument', null=True, blank=True, on_delete=models.SET_NULL)
 
 class Note(models.Model):
     title = models.CharField(max_length=50)

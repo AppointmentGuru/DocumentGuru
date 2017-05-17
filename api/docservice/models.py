@@ -5,4 +5,21 @@ from django.db import models
 # Create your models here.
 class Document(models.Model):
     name = models.CharField(max_length=50)
-    image = models.ImageField()
+    image = models.FileField()
+
+class ImageDocument(models.Model):
+    name = models.CharField(max_length=50)
+    upload = models.FileField(upload_to='uploads/')
+
+class ImageType(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=200)
+    width = models.PositiveIntegerField()
+    height = models.PositiveIntegerField()
+    imageDoc = models.ForeignKey('ImageDocument', on_delete=models.SET_NULL, null=True, blank=True)
+
+class Note(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+    createdDate = models.DateTimeField()
+    modifiedDate = models.DateTimeField()

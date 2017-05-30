@@ -1,29 +1,8 @@
 <template>
   <div class="main-page">
-    <h2>AppointmentGuru DocumentGuru</h2>
-    <!--<strong>Todo</strong>
-    <ul>
-      <li>Provide basic styling so that the App/docs looks nice</li>
-    </ul>-->
-
-    <h3>Upload an Image</h3>
-     <div>
+    <h2 class="title">AppointmentGuru DocumentGuru</h2>
     <image-uploader ></image-uploader>
-    </div>
-    <!--<strong>Todo</strong>
-    <ul>
-      <li>Validate that images are the correct type, and (optionally) dimensions</li>
-      <li>Upload images to the Actual API</li>
-      <li>Show a loading icon while uploading</li>
-    </ul>
-    <strong>Example</strong>-->
-
-    <hr/>
-
-    <h3>Document list </h3>
     <document-list></document-list>
-    </p>
-    <hr/>
   </div>
 </template>
 
@@ -40,3 +19,11 @@ export default {
   }
 }
 </script>
+<style>
+.title {
+  text-align: center;
+  font-style: italic;
+  color: orangered;
+}
+</style>
+

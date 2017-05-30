@@ -22,9 +22,24 @@
     height: 178px;
     display: block;
   }
+    .el-row {
+    margin-bottom: 20px;
+    border: 1px;
+
+  }
+  .el-col {
+    border-radius: 4px;
+
+  }
+  .grid-content {
+    border-style: solid;
+    border-width: 0.5px;
+  }
 </style>
 <template>
-<div>
+<el-row :gutter="20">
+  <el-col :span="7">
+<div class="grid-content">
   <h4>Choose a file type!</h4>
   <el-dropdown>
   <el-button type="primary">
@@ -52,6 +67,8 @@
   <div slot="tip" class="el-upload__tip">jpg file with a size less than 500kb</div>
 </el-upload>
 </div>
+</el-col>
+</el-row>
 </template>
 <script>
   export default {
@@ -70,16 +87,11 @@
         console.log(file)
       },
       beforeAvatarUpload (file) {
-        const isJPG = file.type === 'image/jpeg'
         const isLt2M = file.size / 500 / 500 < 2
-
-        if (!isJPG) {
-          alert('Picture must be JPG format!')
-        }
         if (!isLt2M) {
           alert('Picture size can not exceed 2MB!')
         }
-        return isJPG && isLt2M
+        return isLt2M
       }
     }
   }

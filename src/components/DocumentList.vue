@@ -1,37 +1,21 @@
 <template>
-  <div>
+<el-row :gutter="20">
+  <el-col :span="16">
+  <div class="documentList">
+    <h3>Document List</h3>
     <div>
-      <el-input class="search" placeholder="Search by id ex 1" icon="search" v-model="input2" :on-icon-click="handleIconClick">
+      <el-input class="search" placeholder="Search by id ex 1" icon="search" v-model="filterText" :on-icon-click="handleIconClick">
       </el-input>
     </div>
-    <!--<strong>Todo</strong>
-    <ul>
-      <li>Ability to filter document list</li>
-      <li>Ability to search document list</li>
-    </ul>-->
-  
-    <strong>Listitem todo</strong>
-    <ul>
-      <li>Make it look nice</li>
-    </ul>
-      <!--<el-popover ref="popover4" placement="right" width="510" trigger="click">
-      <el-table :data="gridData">
-        <el-table-column width="50" property="id" label="id"></el-table-column>
-        <el-table-column width="145"property="name" label="name"></el-table-column>
-        <el-table-column width="150" property="type" label="type"></el-table-column>
-        <el-table-column width="150" property="url" label="URL" ></el-table-column>
-      </el-table>
-    </el-popover>
-  
-    <el-button class="documents" v-popover:popover4>Show Documents</el-button>
-    <document-list-item v-for='document in documents' :key='document.id' :document='document' :repeat='document'>
-    </document-list-item>-->
     <ul>
       <li v-for="Datas in Data">
-       {{ flattenObject(Datas) }}
+       {{ Datas.name }} - {{ Datas.type }} - {{ Datas.url }}
       </li>
     </ul>
+    <p> {{ ev }} </p>
   </div>
+  </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -43,7 +27,7 @@
     },
     data () {
       return {
-        input2: '',
+        filterText: '',
         Data: [{
           id: 1,
           name: 'A name describing this file',
@@ -59,17 +43,17 @@
         ]
       }
     },
+    computed: {
+      filterdData () {
+        return this.Data.filter((element) => {
+          return element.match(this.filterText)
+        })
+      }
+    },
     methods: {
       handleIconClick (ev) {
         console.log(ev)
-      },
-      flattenObject (data) {
-        let output = ''
-        for (var i in data) {
-          output += ' - ' + data[i]
-        }
-
-        return output
+        return this.ev
       }
     }
   }
@@ -82,9 +66,14 @@
   margin: auto;
   padding: 10px;
 }
-.search{
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
+  .el-row {
+    margin-bottom: 20px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .documentList{
+    border-style: solid;
+    border-width: 0.5px;
+  }
 </style>

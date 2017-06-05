@@ -17,7 +17,13 @@ import {
   Popover,
   Table,
   TableColumn,
-  Cascader
+  Cascader,
+  Card,
+  Col,
+  Form,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
 } from 'element-ui'
 
 Vue.component(Upload.name, Upload)
@@ -27,6 +33,12 @@ Vue.use(Popover)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Cascader)
+Vue.use(Card)
+Vue.use(Col)
+Vue.use(Form)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
 
 /* eslint-disable no-new */
 new Vue({

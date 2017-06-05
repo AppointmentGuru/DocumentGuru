@@ -23,3 +23,5 @@ class Note(models.Model):
     text = models.TextField()
     createdDate = models.DateTimeField()
     modifiedDate = models.DateTimeField()
+    images = models.ForeignKey('ImageDocument', null=True, blank=True, on_delete=models.SET_NULL)
+    documents = models.ForeignKey('Document', null=True, blank=True, on_delete=models.SET_NULL)
